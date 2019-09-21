@@ -1,11 +1,18 @@
-// 单文件组件
 <template>
-  <button class="g-button">按钮</button>
+  <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
+    <svg v-if="icon" class="icon">
+      <use :xlink:href="`#i-${icon}`" />
+    </svg>
+    <div class="content">
+      <slot></slot>
+    </div>
+  </button>
 </template>
 
 <script>
 export default {
   // 接一个对象
+  props: ["icon", "iconPosition"]
 };
 </script>
 
@@ -17,7 +24,11 @@ export default {
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
   background: var(--button-bg);
-  &:hover {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle; // 经验：内联元素不对齐的情况下使用
+  &:hover { //.g-button:hover{...}
     border-color: var(--border-color-hover);
   }
 
@@ -27,6 +38,23 @@ export default {
 
   &:focus {
     outline: none;
+  }
+  > .icon { // .g-button .icon{...}
+    order: 1;
+    margin-right: .1em;
+  }
+  > .content { // .g-button .content{...}
+    order: 2;
+  }
+  &.icon-right { // .g-button.icon-right{}
+    > .icon { // .g-button.icon-right .icon{}
+      order: 2;
+      margin-left: .1em;
+      margin-right: 0;
+    }
+    > .content {
+      order: 1;
+    }
   }
 }
 </style>
