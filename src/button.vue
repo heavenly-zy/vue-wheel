@@ -1,6 +1,7 @@
 <template>
   <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
-     <g-icon class="icon" v-if="icon" :name="icon"></g-icon>
+    <g-icon class="icon" v-if="icon" :name="icon"></g-icon>
+    <g-icon class="loading" name="loading"></g-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -19,13 +20,13 @@ export default {
       validator(value) {
         // 属性检查器
         console.log(value);
-        return value === "left" || value === "right"
+        return value === "left" || value === "right";
         // 1.return value !== "left" && value !== "right" ? false : true;
         // 2.if (value !== "left" && value !== "right") {
         //      return false;
         //   } else {
         //      return true;
-        //   } 
+        //   }
       }
     }
   }
@@ -33,6 +34,17 @@ export default {
 </script>
 
 <style lang="scss">
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading {
+  animation: spin 1s infinite linear;
+}
 .g-button {
   font-size: var(--font-size);
   height: var(--button-height);
