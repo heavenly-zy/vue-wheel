@@ -12,7 +12,25 @@
 <script>
 export default {
   // 接一个对象
-  props: ["icon", "iconPosition"]
+  //props: ["icon", "iconPosition"]
+  props: {
+    icon: {},
+    iconPosition: {
+      type: String,
+      default: "left",
+      validator(value) {
+        // 属性检查器
+        console.log(value);
+        return value === "left" || value === "right"
+        // 1.return value !== "left" && value !== "right" ? false : true;
+        // 2.if (value !== "left" && value !== "right") {
+        //      return false;
+        //   } else {
+        //      return true;
+        //   } 
+      }
+    }
+  }
 };
 </script>
 
@@ -28,7 +46,8 @@ export default {
   justify-content: center;
   align-items: center;
   vertical-align: middle; // 经验：内联元素不对齐的情况下使用
-  &:hover { //.g-button:hover{...}
+  &:hover {
+    //.g-button:hover{...}
     border-color: var(--border-color-hover);
   }
 
@@ -39,17 +58,21 @@ export default {
   &:focus {
     outline: none;
   }
-  > .icon { // .g-button .icon{...}
+  > .icon {
+    // .g-button .icon{...}
     order: 1;
-    margin-right: .1em;
+    margin-right: 0.1em;
   }
-  > .content { // .g-button .content{...}
+  > .content {
+    // .g-button .content{...}
     order: 2;
   }
-  &.icon-right { // .g-button.icon-right{}
-    > .icon { // .g-button.icon-right .icon{}
+  &.icon-right {
+    // .g-button.icon-right{}
+    > .icon {
+      // .g-button.icon-right .icon{}
       order: 2;
-      margin-left: .1em;
+      margin-left: 0.1em;
       margin-right: 0;
     }
     > .content {
