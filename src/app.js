@@ -23,7 +23,8 @@ chai.use(spies)
 
 const expect = chai.expect
 
-{
+try {
+    { // 测试按钮含有 icon
     console.log(Button) // 由打印结果可知button是一个对象
     const Constructor = Vue.extend(Button) // 把Button组件变成一个构造函数
     console.log(Constructor) // 函数
@@ -32,7 +33,7 @@ const expect = chai.expect
             icon:'settings' // 设置icon的值为'settings'
         }
     }) // 实例化构造函数
-    vm.$mount('#test') // 将实例挂载到id为test的标签上
+    vm.$mount() // 将vm实例挂载到内存上
     let useElement = vm.$el.querySelector('use')
     let href = useElement.getAttribute('xlink:href')
     expect(href).to.eq('#i-settings') // 我期望use的href是'#i-settings'
@@ -103,3 +104,12 @@ const expect = chai.expect
     button.click()
     expect(spy).to.have.been.called()
 }
+}
+catch (error){
+    window.errors = [error]
+}
+finally {
+    window.errors && window.errors.forEach((error)=>{
+        console.error(error.message)
+    })
+ }
