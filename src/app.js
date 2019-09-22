@@ -40,6 +40,7 @@ try {
     vm.$el.remove() // 测试用例通过就把这个vm元素移除
     vm.$destroy() // 删除vm对象
 }
+// 用块与块隔离代码是因为要使作用域隔离，否则会冲突
 {
     const Constructor = Vue.extend(Button) 
     const vm = new Constructor({
