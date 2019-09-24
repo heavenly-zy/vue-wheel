@@ -56,7 +56,7 @@ $red:#F1453D;
   font-size: $font-size;
   display: inline-flex;
   align-items: center;
-
+  vertical-align: middle;
   > :not(:last-child){margin-right: .5em;}
   > input {
     height: 32px;
