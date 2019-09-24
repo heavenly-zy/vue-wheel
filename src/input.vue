@@ -6,6 +6,10 @@
       :disabled="disabled"
       :readonly="readonly"
       :class="{'error':error}"
+      @change="$emit('change',$event,'hello')"
+      @input="$emit('input',$event)"
+      @focus="$emit('focus',$event)"
+      @blur="$emit('blur',$event)"
     />
     <template v-if="error">
       <g-icon name="error" class="icon-error"></g-icon>
@@ -52,6 +56,7 @@ $red:#F1453D;
   font-size: $font-size;
   display: inline-flex;
   align-items: center;
+
   > :not(:last-child){margin-right: .5em;}
   > input {
     height: 32px;
