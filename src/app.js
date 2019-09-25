@@ -19,11 +19,11 @@ new Vue({
         loading1: false,
         loading2: true,
         loading3: false,
-        message:'hello'
+        message: 'hello'
     },
-    created(){
+    created() {
     },
-    methods:{
+    methods: {
     }
 })
 

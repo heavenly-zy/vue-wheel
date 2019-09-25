@@ -51,13 +51,15 @@ $border-color-hover: #666;
 $border-radius: 4px;
 $font-size: 14px;
 $box-shadow-color: rgba(0, 0, 0, 0.5);
-$red:#F1453D;
+$red: #f1453d;
 .wrapper {
   font-size: $font-size;
   display: inline-flex;
   align-items: center;
   vertical-align: middle;
-  > :not(:last-child){margin-right: .5em;}
+  > :not(:last-child) {
+    margin-right: 0.5em;
+  }
   > input {
     height: 32px;
     border: 1px solid $border-color;
@@ -84,8 +86,8 @@ $red:#F1453D;
   .icon-error {
     fill: $red;
   }
-  .errorMessage{
-      color:$red;
+  .errorMessage {
+    color: $red;
   }
 }
 </style>
