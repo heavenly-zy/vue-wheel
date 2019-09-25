@@ -39,6 +39,13 @@
       margin: 20px;
     }
   </style>
+  <style>
+    .demo {
+      background: #ddd;
+      border: 1px solid #666;
+      height: 100px;
+    }
+  </style>
 </head>
 
 <body>
@@ -68,25 +75,26 @@
     <div class="box">
       <g-input value="赵" error="姓名不能少于两个字"></g-input>
     </div>
-    <g-row gutter="30" align="left">
-      <g-col>1</g-col>
-      <g-col>2</g-col>
+    <g-row>
+      <g-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </g-col>
+      <g-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </g-col>
+      <g-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </g-col>
+      <g-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </g-col>
+      <g-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </g-col>
+      <g-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </g-col>
     </g-row>
-    <g-row gutter="30" align="right">
-      <g-col>3</g-col>
-      <g-col>4</g-col>
-      <g-col>5</g-col>
-    </g-row>
-    <div style="border: 1px solid red;">
-      <g-row>
-        <g-col span="24" :ipad="{span:8}" :narrow-pc="{span:4}" :pc="{span:2}" :wide-pc="{span:1}">
-          1
-        </g-col>
-        <g-col span="24" :ipad="{span:16}" :narrow-pc="{span:20}" :pc="{span:22}" :wide-pc="{span:23}">
-          11
-        </g-col>
-      </g-row>
-    </div>
   </div>
   <script src="./src/app.js"></script>
 </body>
