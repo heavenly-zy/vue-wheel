@@ -39,9 +39,18 @@ new Vue({
     created() {
     },
     methods: {
-        showToast() {
-            this.$toast(`${parseInt(Math.random()*100)}`, {
-                position: 'middle',
+        showToast1() {
+            this.showToast('top')
+        },
+        showToast2() {
+            this.showToast('middle')
+        },
+        showToast3() {
+            this.showToast('bottom')
+        },
+        showToast(position) {
+            this.$toast(`${parseInt(Math.random() * 100)}`, {
+                position,
                 enableHtml: false,
                 closeButton: {
                     text: '关闭',
