@@ -58,8 +58,7 @@ new Vue({
                         console.log('yyyyyy')
                     }
                 },
-                autoClose: false,
-                autoCloseDelay: 3
+                autoClose: 3
             })
         }
     }
