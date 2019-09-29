@@ -36,9 +36,24 @@
 
 <body>
   <div id="app">
-    <button @click="showToast1">top</button>
-    <button @click="showToast2">middle</button>
-    <button @click="showToast3">bottom</button>
+    <!-- 语法糖：<g-tabs selected="selectedTab" @update:selectedTab="selectedTab=$event"> -->
+    <g-tabs :selected.sync="selectedTab">
+      <g-tabs-head>
+        <template slot="actions">
+          <button>设置</button>
+        </template>
+        <g-tabs-item name="aaa">
+          <g-icon name="settings"></g-icon>aaa
+        </g-tabs-item>
+        <g-tabs-item name="bbb">bbb</g-tabs-item disabled>
+        <g-tabs-item name="ccc">ccc</g-tabs-item>
+      </g-tabs-head>
+      <g-tabs-body>
+        <g-tabs-panel name="111">111</g-tabs-panel>
+        <g-tabs-panel name="222">222</g-tabs-panel>
+        <g-tabs-panel name="333">333</g-tabs-panel>
+      </g-tabs-body>
+    </g-tabs>
   </div>
   <script src="./src/app.js"></script>
 </body>
