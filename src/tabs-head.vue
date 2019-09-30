@@ -12,30 +12,32 @@
 export default {
   name: "WheelTabsHead",
   inject: ["eventBus"],
-  created() {
-    this.eventBus.$on('update:selected',(item,vm)=>{
-      console.log(item)
-    })
+  mounted() {
+    this.eventBus.$on("update:selected", (item, vm) => {
+      let { width, height, top, left } = vm.$el.getBoundingClientRect();
+      this.$refs.line.style.width = `${width}px`;
+      this.$refs.line.style.left = `${left}px`;
+    });
   }
 };
 </script>
 
 <style lang="scss" scoped>
 $tab-height: 40px;
-$blue:blue;
+$blue: blue;
 .tabs-head {
   display: flex;
   height: $tab-height;
   justify-content: flex-start;
   position: relative;
-  > .line{
+  > .line {
     position: absolute;
     bottom: 0;
     border-bottom: 1px solid $blue;
-    width: 100px;
+    transition: all 500ms;
   }
-  > .actions-wrapper{
-    margin-left:auto;
+  > .actions-wrapper {
+    margin-left: auto;
   }
 }
 </style>

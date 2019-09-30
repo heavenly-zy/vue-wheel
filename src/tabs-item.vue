@@ -41,14 +41,14 @@ export default {
   },
   methods: {
     onClick() {
-      this.eventBus.$emit("update:selected", this.name,this);
+      this.eventBus.$emit("update:selected", this.name, this);
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-$blue:blue;
+$blue: blue;
 .tabs-item {
   flex-shrink: 0;
   padding: 0 1em;
@@ -56,8 +56,8 @@ $blue:blue;
   align-items: center;
   cursor: pointer;
   height: 100%;
-  &.active{
-    color:$blue;
+  &.active {
+    color: $blue;
     font-weight: bold;
   }
 }

@@ -40,7 +40,7 @@ export default {
 
 <style lang="scss" scoped>
 .tabs-panel {
-  &.active{
+  &.active {
     background: red;
   }
 }
