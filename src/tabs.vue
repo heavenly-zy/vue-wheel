@@ -7,49 +7,57 @@
 <script>
 import Vue from "vue";
 export default {
-  name: "WheelTabs",
-  props: {
-    selected: {
-      type: String,
-      required: true
+    name: "WheelTabs",
+    props: {
+        selected: {
+            type: String,
+            required: true
+        },
+        direction: {
+            type: String,
+        default:
+            "horizontal",
+            validator(value) {
+                return ["horizontal", "vertical"].indexOf(value) >= 0;
+            }
+        }
     },
-    direction: {
-      type: String,
-      default: "horizontal",
-      validator(value) {
-        return ["horizontal", "vertical"].indexOf(value) >= 0;
-      }
+    data() {
+        return {
+            eventBus: new Vue()
+        };
+    },
+    provide() {
+        return {
+            eventBus: this.eventBus
+        };
+    },
+    methods: {
+        checkChildren() {
+            if (this.$children.length === 0) {
+                console && console.warn &&
+                console.warn('tabs 的子组件应该是 tabs-head 和 tabs-body，但你没有写子组件')
+            }
+        },
+        selectTab() {
+            this.$children.forEach(vm => {
+                if (vm.$options.name === "WheelTabsHead") {
+                    vm.$children.forEach(childVm => {
+                        if (
+                            childVm.$options.name === "WheelTabsItem" &&
+                            childVm.name === this.selected) {
+                            this.eventBus.$emit("update:selected", this.selected, childVm);
+                            console.log('事件触发了')
+                        }
+                    });
+                }
+            });
+        }
+    },
+    mounted() {
+        this.checkChildren()
+        this.selectTab()
     }
-  },
-  data() {
-    return {
-      eventBus: new Vue()
-    };
-  },
-  provide() {
-    return {
-      eventBus: this.eventBus
-    };
-  },
-  mounted() {
-    if(this.$children.length === 0){
-      console && console.warn &&
-      console.warn('tabs 的子组件应该是 tabs-head 和 tabs-body，但你没有写子组件')
-    }
-    this.$children.forEach(vm => {
-      if (vm.$options.name === "WheelTabsHead") {
-        vm.$children.forEach(childVm => {
-          if (
-            childVm.$options.name === "WheelTabsItem" &&
-            childVm.name === this.selected
-          ) {
-            this.eventBus.$emit("update:selected", this.selected, childVm);
-            console.log('事件触发了')
-          }
-        });
-      }
-    });
-  }
 };
 </script>
 
