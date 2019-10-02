@@ -1,5 +1,5 @@
 <template>
-  <div class="popover" @click="onClick" ref="popover">
+  <div class="popover" ref="popover">
     <div ref="contentWrapper" class="content-wrapper" v-if="visible" :class="{[`position-${position}`]:true}">
       <slot name="content"></slot>
     </div>
@@ -16,6 +16,22 @@ export default {
   data() {
     return { visible: false };
   },
+  mounted () {
+	if(this.trigger === 'click') {
+		this.$refs.popover.addEventListener('click',this.onClick)
+	}else {
+		this.$refs.popover.addEventListener('mouseenter',this.open)
+		this.$refs.popover.addEventListener('mouseleave',this.close)
+	}  
+  },
+  destroyed () {
+	if(this.trigger === 'click') {
+		this.$refs.popover.addEventListener('click',this.onClick)
+	}else {
+		this.$refs.popover.addEventListener('mouseenter',this.open)
+		this.$refs.popover.addEventListener('mouseleave',this.close)
+	}    
+  },
   props: {
     position: {
       type: String,
@@ -23,7 +39,14 @@ export default {
       validator(value) {
          return ['top', 'bottom', 'left', 'right'].indexOf(value) >= 0
       }
-    }
+    },
+	trigger: {
+		type: String,
+		default: 'click',
+		validator (value) {
+			return ['click', 'hover'].indexOf(value) >= 0
+		}
+	}
   },
   methods: {
       positionContent () {
@@ -112,10 +135,12 @@ $border-radius: 4px;
       }
       &::before {
         border-top-color: black;
+		border-bottom: none;
         top: 100%;
       }
       &::after {
         border-top-color: white;
+		border-bottom: none;
         top: calc(100% - 1px);
       }
     }
@@ -126,10 +151,12 @@ $border-radius: 4px;
       }
       &::before {
         border-bottom-color: black;
+		border-top: none;
         bottom: 100%;
       }
       &::after {
         border-bottom-color: white;
+		border-top: none;
         bottom: calc(100% - 1px);
       }
     }
@@ -142,10 +169,12 @@ $border-radius: 4px;
       }
       &::before {
         border-left-color: black;
+		border-right: none;
         left: 100%;
       }
       &::after {
         border-left-color: white;
+		border-right: none;
         left: calc(100% - 1px);
       }
     }
@@ -157,10 +186,12 @@ $border-radius: 4px;
       }
       &::before {
         border-right-color: black;
+		border-left: none;
         right: 100%;
       }
       &::after {
         border-right-color: white;
+		border-left: none;
         right: calc(100% - 1px);
       }
     }
