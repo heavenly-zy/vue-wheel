@@ -1,4 +1,5 @@
 module.exports = {
+    base: '/vue-wheel-demo/',
     title: 'Wheel-UI',
     description: '一个好用的 UI 框架',
     themeConfig: {
@@ -17,7 +18,16 @@ module.exports = {
             },
             {
                 title: '组件',
-                children: ['/components/button']
+                children: [
+                    '/components/button',
+                    '/components/input',
+                    '/components/grid',
+                    '/components/layout',
+                    '/components/toast',
+                    '/components/tabs',
+                    '/components/popover',
+                    '/components/collapse',
+                ]
             }
         ]
     }
