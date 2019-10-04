@@ -9,7 +9,7 @@
 </template>
 <script>
 export default {
-  name: "WheelsTabsHead",
+  name: "WheelTabsHead",
   inject: ["eventBus"],
   mounted() {
     this.eventBus.$on("update:selected", (item, vm) => {

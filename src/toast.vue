@@ -12,7 +12,7 @@
 </template>
 <script>
 export default {
-  name: "WheelsToast",
+  name: "WheelToast",
   props: {
     autoClose: {
       type: [Boolean, Number],

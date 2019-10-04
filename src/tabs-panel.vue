@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-  name: "WheelsTabspanel",
+  name: "WheelTabspanel",
   inject: ["eventBus"],
   props: {
     name: {
