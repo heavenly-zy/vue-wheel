@@ -43,19 +43,20 @@ describe('Toast', () => {
         closeButton.click()
         expect(callback).to.have.been.called
         done()
-      },0)
+      }, 0)
     })
-    // it('接受 enableHtml', () => {
-    //   const Constructor = Vue.extend(Toast)
-    //   const vm = new Constructor({
-    //     propsData: { enableHtml: true }
-    //   })
-    //   vm.$slots.default = ['<strong id="test">hi</strong>']
-    //   vm.$mount()
-    //   let strong = vm.$el.querySelector('#test')
-    //   console.log(strong)
-    //   expect(strong).to.exist
-    // })
+    it('接收 enableHTML 属性.', () => {
+      const Constructor = Vue.extend(Toast)
+      const vm = new Constructor({
+        propsData: { enableHTML: true }
+      })
+      vm.$slots.default = ['<p id="test">hi<p>']
+      vm.$mount()
+      const p = vm.$el.querySelector('#test')
+      expect(p).to.exist
+      vm.$el.remove()
+      vm.$destroy()
+    })
     it('接受 position', () => {
       const Constructor = Vue.extend(Toast)
       const vm = new Constructor({

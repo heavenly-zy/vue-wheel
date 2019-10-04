@@ -42,10 +42,10 @@ export default {
     },
     selectTab() {
       this.$children.forEach(vm => {
-        if (vm.$options.name === "WheelsTabsHead") {
+        if (vm.$options.name === "WheelTabsHead") {
           vm.$children.forEach(childVm => {
             if (
-              childVm.$options.name === "WheelsTabsItem" &&
+              childVm.$options.name === "WheelTabsItem" &&
               childVm.name === this.selected
             ) {
               this.eventBus.$emit("update:selected", this.selected, childVm);
