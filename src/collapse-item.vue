@@ -52,6 +52,8 @@ export default {
 <style lang="scss" scoped>
 $grey: #ddd;
 $border-radius: 4px;
+$title-color: #4abf8a;
+$content-color: #98fb98;
 .collapseItem {
   > .title {
     border: 1px solid $grey;
@@ -62,6 +64,7 @@ $border-radius: 4px;
     display: flex;
     align-items: center;
     padding: 0 8px;
+    background: $title-color;
   }
   &:first-child {
     > .title {
@@ -77,6 +80,7 @@ $border-radius: 4px;
   }
   > .content {
     padding: 8px;
+    background: $content-color;
   }
 }
 </style>
