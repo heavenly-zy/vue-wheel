@@ -4,9 +4,8 @@ module.exports = {
     description: '一个好用的 UI 框架',
     themeConfig: {
         nav: [
-            { text: '主题', link: '/' },
-            { text: '文档', link: '/guide/' },
-            { text: '交流', link: '/https://baidu.com' },
+            { text: '首页', link: '/' },
+            { text: 'GitHub', link: 'https://github.com/heavenly-zy/vue-wheel-demo' },
         ],
         sidebar: [
             {
