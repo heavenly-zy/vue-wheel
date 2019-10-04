@@ -55,7 +55,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$blue: blue;
+$green: #3eaf7c;
 $disabled-text-color: #ddd;
 .tabs-item {
   flex-shrink: 0;
@@ -65,7 +65,7 @@ $disabled-text-color: #ddd;
   cursor: pointer;
   height: 100%;
   &.active {
-    color: $blue;
+    color: $green;
     font-weight: bold;
   }
   &.disabled {
