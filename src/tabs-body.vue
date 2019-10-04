@@ -1,18 +1,16 @@
 <template>
-  <div class="tabs-body">
-    <slot></slot>
-  </div>
+    <div class="tabs-body">
+        <slot></slot>
+    </div>
 </template>
-
 <script>
-export default {
-  name: "WheelTabsBody",
-  inject: ["eventBus"],
-  created() {}
-};
+    export default {
+        name: "WheelsTabsBody",
+        inject: ['eventBus'],
+        created(){
+        }
+    }
 </script>
-
-<style lang="scss" scoped>
-.tabs-body {
-}
+<style scoped>
+    .tabs-body {}
 </style>

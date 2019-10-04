@@ -6,8 +6,8 @@
         <g-tabs-item name="2">P2</g-tabs-item>
       </g-tabs-head>
       <g-tabs-body>
-        <g-tabs-pane name="1">content 1</g-tabs-pane>
-        <g-tabs-pane name="2">content 2</g-tabs-pane>
+        <g-tabs-panel name="1">content 1</g-tabs-panel>
+        <g-tabs-panel name="2">content 2</g-tabs-panel>
       </g-tabs-body>
     </g-tabs>
   </div>
@@ -25,7 +25,7 @@ export default {
     "g-tabs-head": TabsHead,
     "g-tabs-body": TabsBody,
     "g-tabs-item": TabsItem,
-    "g-tabs-pane": TabsPanel
+    "g-tabs-panel": TabsPanel
   },
   data() {
     return {

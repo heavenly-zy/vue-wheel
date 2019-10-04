@@ -3,10 +3,9 @@
     <slot></slot>
   </div>
 </template>
-
 <script>
 export default {
-  name: "WheelTabsItem",
+  name: "WheelsTabsItem",
   inject: ["eventBus"],
   data() {
     return {
@@ -34,11 +33,7 @@ export default {
   created() {
     if (this.eventBus) {
       this.eventBus.$on("update:selected", name => {
-        if (name === this.name) {
-          this.active = true;
-        } else {
-          this.active = false;
-        }
+        this.active = name === this.name;
       });
     }
   },
@@ -48,29 +43,30 @@ export default {
         return;
       }
       this.eventBus && this.eventBus.$emit("update:selected", this.name, this);
-      this.$emit('click',this)
+      this.$emit("click", this);
     }
   }
 };
 </script>
-
-<style lang="scss" scoped>
-$green: #3eaf7c;
-$disabled-text-color: #ddd;
+<style scoped lang="scss">
+$active-color: #3eaf7c;
+$font-family: PingFangSC-Regular;
+$disabled-text-color: gray;
 .tabs-item {
   flex-shrink: 0;
   padding: 0 1em;
+  height: 100%;
+  font-family: $font-family;
   display: flex;
   align-items: center;
   cursor: pointer;
-  height: 100%;
   &.active {
-    color: $green;
+    color: $active-color;
     font-weight: bold;
   }
   &.disabled {
     color: $disabled-text-color;
-    cursor: not-allowed;
+    cursor: default;
   }
 }
 </style>

@@ -3,21 +3,20 @@
     <slot></slot>
   </div>
 </template>
-
 <script>
 export default {
-  name: "WheelTabsPanel",
+  name: "WheelsTabspanel",
   inject: ["eventBus"],
-  data() {
-    return {
-      active: false
-    };
-  },
   props: {
     name: {
       type: String | Number,
       required: true
     }
+  },
+  data() {
+    return {
+      active: false
+    };
   },
   computed: {
     classes() {
@@ -28,17 +27,12 @@ export default {
   },
   created() {
     this.eventBus.$on("update:selected", name => {
-      if (name === this.name) {
-        this.active = true;
-      } else {
-        this.active = false;
-      }
+      this.active = name === this.name;
     });
   }
 };
 </script>
-
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .tabs-panel {
   padding: 1em;
   &.active {
