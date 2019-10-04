@@ -81,6 +81,10 @@ $red: #f1453d;
     }
     &.error {
       border-color: $red;
+      &:focus {
+      outline: none;
+      box-shadow: inset 0 1px 3px $red;
+    }
     }
   }
   .icon-error {
