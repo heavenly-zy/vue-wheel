@@ -52,14 +52,14 @@ $border-color: #999;
 $border-color-hover: #666;
 @keyframes spin {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(360deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
 }
 .loading {
-  animation: spin 1s infinite linear;
+  animation: spin 2s infinite linear;
 }
 .g-button {
   font-size: $font-size;
