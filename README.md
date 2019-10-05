@@ -2,7 +2,7 @@
 
 [![Build Status](https://www.travis-ci.org/heavenly-zy/vue-wheel-demo.svg?branch=master)](https://www.travis-ci.org/heavenly-zy/vue-wheel-demo)
 
-[![NPM](https://nodei.co/npm/<package>.png)](https://npmjs.org/package/<package>)
+[![NPM](https://nodei.co/npm/vue-wheel-demo.png)](https://npmjs.org/package/vue-wheel-demo)
 
 ## 介绍
 
@@ -18,7 +18,7 @@
 
 使用本框架前，请在 CSS 中开启 border-box
 
-``` 
+``` css
 *,*::before,*::after{box-sizing:border-box}
 ```
 
@@ -26,13 +26,13 @@ IE 8 及以上浏览器都支持此样式
 
 2. 安装 vue-wheel
 
-``` 
+``` sh
 npm install vue-wheel-demo
 ```
 
 3. 引入 vue-wheel
 
-``` 
+``` js
 import { Button } from "vue-wheel-demo";
 import 'vue-wheel-demo/dist/index.css'
 
