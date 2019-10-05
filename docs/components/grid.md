@@ -6,6 +6,19 @@ title: Grid - 网格布局
 
 网格布局就是把一个 div 分成 N 个部分（N = 12,16,24...），每个部分无空隙或者有空隙。
 
+## 引入 Grid 组件
+
+```js
+import { Col, Row } from "vue-wheel-demo";
+
+export default {
+  components: {
+    "g-col": Col,
+    "g-row": Row
+  }
+};
+```
+
 ::: warning 注意
 使用该组件之前，请在 css 中开启 border-box
 :::
@@ -21,7 +34,7 @@ title: Grid - 网格布局
 <grid-demo-1></grid-demo-1>
 </ClientOnly>
 
-- 使用方法
+- 使用示例
 
 ```html
 <g-row>
@@ -124,7 +137,7 @@ title: Grid - 网格布局
 <grid-demo-2></grid-demo-2>
 </ClientOnly>
 
-- 使用方法
+- 使用示例
 ``` html
 <g-row gutter="10">
   <g-col span="8">
@@ -166,7 +179,7 @@ title: Grid - 网格布局
 <grid-demo-3></grid-demo-3>
 </ClientOnly>
 
-- 使用方法
+- 使用示例
 ``` html
 <g-row>
   <g-col span="8">

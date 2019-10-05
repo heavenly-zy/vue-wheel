@@ -1,6 +1,6 @@
 module.exports = {
     base: '/vue-wheel-demo/',
-    title: 'Wheel-UI',
+    title: 'vue-wheel',
     description: '一个好用的 UI 框架',
     themeConfig: {
         nav: [
@@ -8,6 +8,13 @@ module.exports = {
             { text: 'GitHub', link: 'https://github.com/heavenly-zy/vue-wheel-demo' },
         ],
         sidebar: [
+            {
+                title: '介绍',
+                collapsable: true,
+                children: [
+                    '/introduce/',
+                ]
+            },
             {
                 title: '入门',
                 children: [

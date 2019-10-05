@@ -6,6 +6,22 @@ title: Layout - 默认布局
 
 这里提供简单的默认布局和有侧边栏的布局
 
+## 引入 Layout 组件
+
+```js
+import { Layout, Header, Footer, Content, Sider } from "vue-wheel-demo";
+
+export default {
+  components: {
+    "g-layout": Layout,
+    "g-header": Header,
+    "g-footer": Footer,
+    "g-content": Content,
+    "g-sider": Sider
+  }
+};
+```
+
 ## 简单布局
 
 - 预览
@@ -14,7 +30,7 @@ title: Layout - 默认布局
 <layout-demo-1></layout-demo-1>
 </ClientOnly>
 
-- 使用方法
+- 使用示例
 ```html
 <g-layout style="color: white; margin-bottom:50px;">
   <g-header style="height: 50px; background:lightskyblue;">
@@ -37,7 +53,7 @@ title: Layout - 默认布局
 <layout-demo-2></layout-demo-2>
 </ClientOnly>
 
-- 使用方法
+- 使用示例
 ``` html
 <g-layout style="color: white; overflow:hidden; margin-bottom:50px;">
   <g-header style="height: 50px; background:lightskyblue;">
@@ -65,7 +81,7 @@ title: Layout - 默认布局
 <layout-demo-3></layout-demo-3>
 </ClientOnly>
 
-- 使用方法
+- 使用示例
 
 ```html
 <g-layout style="color: white; overflow:hidden; margin-bottom:50px;">

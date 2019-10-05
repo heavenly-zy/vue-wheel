@@ -4,7 +4,19 @@ title: Input - 输入框
 
 # 输入框
 
-提供各种常用的输入框用法以及支持v-model双向绑定
+提供各种常用的输入框用法以及支持v-model双向绑定用法。
+
+## 引入 Input 组件
+
+```js
+import { Input } from "vue-wheel-demo";
+
+export default {
+  components: {
+    "g-input": Input
+  }
+};
+```
 
 ## 简单用法
 
@@ -14,7 +26,7 @@ title: Input - 输入框
    <input-demos></input-demos>
    </ClientOnly>
 
-- 使用方法
+- 使用示例
 
 ```html
 <g-input value="普通"></g-input>
@@ -31,7 +43,7 @@ title: Input - 输入框
    <input-model-demos></input-model-demos>
    </ClientOnly>
 
-- 使用方法
+- 使用示例
 ``` html
 <g-input v-model="value"></g-input>
 <div>value: {{value}}</div>

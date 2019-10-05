@@ -2,7 +2,7 @@
 home: true
 heroImage: /vue.png
 actionText: get start →
-actionLink: /install/
+actionLink: /introduce/
 features:
 - title: 简明优先
   details: 极简化设计，注重内部功能实现。

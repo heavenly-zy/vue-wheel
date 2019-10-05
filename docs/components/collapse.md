@@ -4,6 +4,20 @@ title: Collapse - 手风琴
 
 # 手风琴
 
+二级导航菜单
+
+## 引入 Collapse 组件
+```js
+import { Collapse, CollapseItem } from "vue-wheel-demo";
+
+export default {
+  components: {
+    "g-collapse": Collapse,
+    "g-collapse-item": CollapseItem
+  }
+};
+```
+
 ## 普通用法
 
 - 预览
@@ -12,7 +26,7 @@ title: Collapse - 手风琴
 <collapse-demo-1></collapse-demo-1>
 </ClientOnly>
 
-- 使用方法
+- 使用示例
 
 ```html
 <g-collapse :selected.sync="selectedTab">
@@ -40,7 +54,7 @@ data: {
 <collapse-demo-2></collapse-demo-2>
 </ClientOnly>
 
-- 使用方法
+- 使用示例
 
 ```html
 <g-collapse :selected.sync="selectedTab" single>

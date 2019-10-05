@@ -1,6 +1,6 @@
 {
   "name": "vue-wheel-demo",
-  "version": "0.0.2",
+  "version": "0.0.7",
   "description": "这是一个vue的UI框架",
   "main": "dist/index.js",
   "scripts": {

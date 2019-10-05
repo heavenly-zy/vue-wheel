@@ -6,6 +6,18 @@ title: Popover - 弹出层
 
 popover 组件，支持 click 和 hover 两种触发方式
 
+## 引入 Popover 组件
+```js
+import { Popover, Button } from "vue-wheel-demo";
+
+export default {
+  components: {
+    "g-popover": Popover,
+    "g-button": Button
+  }
+};
+```
+
 ## click 触发
 
 ::: tip 提示
@@ -18,7 +30,7 @@ popover 默认触发方式为 click
    <popover-demo-1></popover-demo-1>
    </ClientOnly>
 
-- 使用方法
+- 使用示例
 
 ```html
 <g-popover>
@@ -47,7 +59,7 @@ popover 默认触发方式为 click
    <popover-demo-2></popover-demo-2>
    </ClientOnly>
 
-- 使用方法
+- 使用示例
 
 ```html
 <g-popover trigger="hover">

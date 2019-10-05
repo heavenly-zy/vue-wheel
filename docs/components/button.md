@@ -4,7 +4,20 @@ title: Button - 按钮
 
 # 按钮
 
-提供单个按钮和组合形式的按钮，同时也可为按钮设置图标，调节图标位置。
+提供单个按钮和组合形式的按钮，同时也可为按钮设置图标，调节图标位置，切换按钮状态。
+
+## 引入 Button 组件
+
+```js
+import { Button, ButtonGroup } from "vue-wheel-demo";
+
+export default {
+  components: {
+    "g-button-group": ButtonGroup,
+    "g-button": Button
+  }
+};
+```
 
 ## 单个按钮
 
@@ -14,7 +27,7 @@ title: Button - 按钮
    <button-demos></button-demos>
    </ClientOnly>
 
-- 使用方法
+- 使用示例
 ```html
 <g-button>默认</g-button>
 <g-button icon="settings">设置</g-button>
@@ -38,7 +51,7 @@ data:{
    <button-group-demos></button-group-demos>
    </ClientOnly>
 
-- 使用方法
+- 使用示例
 ``` html
 <g-button-group>
   <g-button icon="left">上一页</g-button>

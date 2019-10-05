@@ -15,15 +15,24 @@ IE 8 及以上浏览器支持此样式。
 
 # 引入 vue-wheel-demo
 
+示例：
+
+1. 引入 Button 组件，并注册
+
 ``` js
-import { Button } from 'wheels-ada'
 import Vue from 'vue'
+import { Button } from 'vue-wheel-demo'
 import 'vue-wheel-demo/dist/index.css'
 
 export default {
-    el: 'app',
-    components: {
-        'g-button': Button
-    }
-}
+  name: "app",
+  components: {
+    HelloWorld,
+    "g-button": Button
+  }
+};
+```
+2. 使用 `<g-button>` 标签在页面中显示 Button 组件
+``` HTML
+<g-button>按钮示例</g-button>
 ```

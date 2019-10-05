@@ -27,7 +27,6 @@ export default {
       default: "left",
       validator(value) {
         // 属性检查器
-        console.log(value);
         return value === "left" || value === "right";
         // 1.return value !== "left" && value !== "right" ? false : true;
         // 2.if (value !== "left" && value !== "right") {
