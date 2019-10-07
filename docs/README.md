@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /vue.png
+heroImage: /wheel.png
 actionText: get start →
 actionLink: /introduce/
 features:

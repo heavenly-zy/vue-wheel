@@ -50,6 +50,6 @@ export default {
 ```
 ```js
 data:{
-  loading: "默认值"
+  value: "默认值"
 }
 ```

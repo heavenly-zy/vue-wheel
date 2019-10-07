@@ -31,7 +31,7 @@ export default {
 ```html
 <g-button>默认</g-button>
 <g-button icon="settings">设置</g-button>
-<g-button :loading="true">加载中/g-button>
+<g-button :loading="true">加载中</g-button>
 <g-button disabled>禁用</g-button>
 ```
 ```html
